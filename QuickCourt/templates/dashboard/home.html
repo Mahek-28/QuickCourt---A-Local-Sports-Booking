@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - QuickCourt</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .hero-section {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        .feature-card {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(13, 110, 253, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .rating-stars {
+            color: #ffc107;
+        }
+        .auth-modal .modal-content {
+            border-radius: 1rem;
+        }
+        .auth-tabs .nav-link {
+            border: none;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .auth-tabs .nav-link.active {
+            color: #0d6efd;
+            background: transparent;
+            border-bottom: 3px solid #0d6efd;
+        }
+        .otp-input {
+            letter-spacing: 2rem;
+            font-size: 1.5rem;
+            padding-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">
+                <i class="bi bi-stop-circle-fill me-2"></i>QuickCourt
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Venues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#authModal">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>Login
+                    </button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+                        <i class="bi bi-person-plus me-1"></i>Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Book Your Perfect Sports Venue</h1>
+                    <p class="lead mb-4">Find and book the best sports facilities in your area. Connect with fellow sports enthusiasts and never miss a game!</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-primary btn-lg">
+                            <i class="bi bi-search me-2"></i>Find Venues
+                        </a>
+                        <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#authModal">
+                            <i class="bi bi-person-plus me-2"></i>Join Now
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg" alt="Sports Facilities" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Why Choose QuickCourt?</h2>
+                <p class="text-muted">Experience the best in sports facility booking</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-clock text-primary fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold">Easy Booking</h5>
+                        <p class="text-muted">Book your favorite sports venue in just a few clicks. Simple, fast, and secure.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-geo-alt text-primary fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold">Local Venues</h5>
+                        <p class="text-muted">Find sports facilities near you with detailed information and real reviews.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people text-primary fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold">Community</h5>
+                        <p class="text-muted">Connect with fellow sports enthusiasts and build lasting friendships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Sports Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Popular Sports</h2>
+                <p class="text-muted">Choose from a wide variety of sports</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-dribbble text-primary fs-1 mb-3"></i>
+                            <h6 class="card-title">Basketball</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-bicycle text-primary fs-1 mb-3"></i>
+                            <h6 class="card-title">Badminton</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-trophy text-primary fs-1 mb-3"></i>
+                            <h6 class="card-title">Cricket</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-joystick text-primary fs-1 mb-3"></i>
+                            <h6 class="card-title">Football</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-controller text-primary fs-1 mb-3"></i>
+                            <h6 class="card-title">Tennis</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body d-flex flex-column">
+                            <i class="bi bi-table text-primary fs-1 mb-3"></i>
+                            <h6 class="card-title">Table Tennis</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">
+                    View All Venues <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Venues Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Popular Venues</h2>
+                <p class="text-muted">Top-rated facilities in your area</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg" class="card-img-top" alt="Sports Arena" style="height: 200px; object-fit: cover;">
+                        
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Sports Arena</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-geo-alt me-1"></i>Downtown, City
+                            </p>
+                            
+                            <div class="mb-2">
+                                <span class="badge bg-light text-dark me-1">Basketball</span>
+                                <span class="badge bg-light text-dark me-1">Badminton</span>
+                                <span class="badge bg-light text-dark">Table Tennis</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <div class="rating-stars">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <small class="text-muted">(42 reviews)</small>
+                                </div>
+                                <div class="text-end">
+                                    <small class="text-muted">Starting from</small>
+                                    <div class="fw-bold text-primary">₹500/hr</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">
+                                    View Details <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg" class="card-img-top" alt="Turf Ground" style="height: 200px; object-fit: cover;">
+                        
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Turf Ground</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-geo-alt me-1"></i>Westside, City
+                            </p>
+                            
+                            <div class="mb-2">
+                                <span class="badge bg-light text-dark me-1">Football</span>
+                                <span class="badge bg-light text-dark">Cricket</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <div class="rating-stars">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                    </div>
+                                    <small class="text-muted">(36 reviews)</small>
+                                </div>
+                                <div class="text-end">
+                                    <small class="text-muted">Starting from</small>
+                                    <div class="fw-bold text-primary">₹800/hr</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">
+                                    View Details <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg" class="card-img-top" alt="Tennis Club" style="height: 200px; object-fit: cover;">
+                        
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Tennis Club</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-geo-alt me-1"></i>Eastside, City
+                            </p>
+                            
+                            <div class="mb-2">
+                                <span class="badge bg-light text-dark me-1">Tennis</span>
+                                <span class="badge bg-light text-dark">Squash</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <div class="rating-stars">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <small class="text-muted">(58 reviews)</small>
+                                </div>
+                                <div class="text-end">
+                                    <small class="text-muted">Starting from</small>
+                                    <div class="fw-bold text-primary">₹600/hr</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">
+                                    View Details <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">
+                    View All Venues <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Reviews Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">What Our Users Say</h2>
+                <p class="text-muted">Real experiences from our community</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-person-fill text-white"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Rahul Sharma</h6>
+                                    <div class="rating-stars small">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-2">"Great facilities and easy booking process. The courts are well maintained and the staff is friendly."</p>
+                            <small class="text-muted">Sports Arena</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-person-fill text-white"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Priya Patel</h6>
+                                    <div class="rating-stars small">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-2">"The turf ground is perfect for our weekend football matches. Always clean and well maintained."</p>
+                            <small class="text-muted">Turf Ground</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-person-fill text-white"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Amit Singh</h6>
+                                    <div class="rating-stars small">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-2">"Excellent tennis courts with proper lighting for night games. Highly recommended for tennis lovers."</p>
+                            <small class="text-muted">Tennis Club</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">Ready to Get Started?</h2>
+            <p class="lead mb-4">Join thousands of sports enthusiasts already using QuickCourt</p>
+            <div class="d-flex justify-content-center gap-3">
+                <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="bi bi-person-plus me-2"></i>Sign Up Now
+                </button>
+                <a href="#" class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-search me-2"></i>Browse Venues
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">QuickCourt</h5>
+                    <p>Book sports venues with ease and connect with fellow sports enthusiasts in your area.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Venues</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Sports</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Sports</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Basketball</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Badminton</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Football</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Tennis</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Cricket</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 QuickCourt. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content auth-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="authModalLabel">Welcome to QuickCourt</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs auth-tabs border-0 mb-4" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Login</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">Register</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="authTabsContent">
+                        <!-- Login Tab -->
+                        <div class="tab-pane fade show active" id="login" role="tabpanel">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email or Phone</label>
+                                    <input type="text" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    </div>
+                                    <a href="#" class="text-decoration-none">Forgot password?</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+                                <div class="text-center">
+                                    <p class="mb-0">Or login with</p>
+                                    <div class="d-flex justify-content-center gap-3 mt-2">
+                                        <button type="button" class="btn btn-outline-secondary">
+                                            <i class="bi bi-google"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary">
+                                            <i class="bi bi-facebook"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary">
+                                            <i class="bi bi-apple"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Register Tab -->
+                        <div class="tab-pane fade" id="register" role="tabpanel">
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label for="registerName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="registerName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="registerPhone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="registerConfirmPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OTP Verification Modal -->
+    <div class="modal fade" id="otpModal" tabindex="-1" aria-labelledby="otpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content auth-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="otpModalLabel">OTP Verification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4">We've sent a 6-digit verification code to your mobile number ending with <strong>******7890</strong></p>
+                    
+                    <form id="otpForm">
+                        <div class="mb-4 text-center">
+                            <input type="text" class="form-control text-center otp-input" maxlength="6" id="otpCode" placeholder="______" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Verify</button>
+                        <div class="text-center">
+                            <p class="mb-0">Didn't receive code? <a href="#" class="text-decoration-none">Resend OTP</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Show OTP modal when register form is submitted
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var authModal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
+            authModal.hide();
+            
+            var otpModal = new bootstrap.Modal(document.getElementById('otpModal'));
+            otpModal.show();
+        });
+        
+        // Handle OTP verification
+        document.getElementById('otpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var otpModal = bootstrap.Modal.getInstance(document.getElementById('otpModal'));
+            otpModal.hide();
+            
+            // Show success message or redirect
+            alert('Registration successful! You are now logged in.');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+quickcourt/
+├── backend/                  # Django backend
+│   ├── quickcourt/
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   ├── asgi.py
+│   │   └── wsgi.py
+│   ├── venues/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── bookings/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── users/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── static/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── home.html
+│   │   ├── venues/
+│   │   │   ├── list.html
+│   │   │   ├── detail.html
+│   │   │   └── booking.html
+│   │   ├── users/
+│   │   │   ├── profile.html
+│   │   │   ├── bookings.html
+│   │   │   └── dashboard.html
+│   │   ├── owners/
+│   │   │   ├── dashboard.html
+│   │   │   ├── facility_management.html
+│   │   │   ├── court_management.html
+│   │   │   ├── booking_overview.html
+│   │   │   └── profile.html
+│   │   ├── admin/
+│   │   │   ├── dashboard.html
+│   │   │   ├── facility_approval.html
+│   │   │   ├── user_management.html
+│   │   │   └── profile.html
+│   │   └── includes/
+│   │       ├── navbar.html
+│   │       ├── footer.html
+│   │       └── messages.html
+│   └── manage.py
+└── frontend/                  # Static frontend assets
+    ├── css/
+    ├── js/
+    └── images/
