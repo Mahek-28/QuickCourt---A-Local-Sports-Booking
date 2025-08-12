@@ -90,7 +90,8 @@ This project uses Tailwind CSS for styling. The configuration includes:
 The app is built with responsive design using Tailwind CSS breakpoints.
 
 
-## 📦 Deployment
+## 🎥 Video Link
+https://drive.google.com/file/d/1oapiaoXe1pNOHOhDYCt8fD9guYeKMrOX/view?usp=drive_link
 
 Build the application for production:
 
